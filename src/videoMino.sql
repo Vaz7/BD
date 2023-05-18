@@ -133,14 +133,16 @@ CREATE TABLE IF NOT EXISTS Filme (
   galarduacoes TEXT NOT NULL,
   sinopse TEXT NOT NULL,
   stock INT NOT NULL,
+  preco DECIMAL(7,2) NOT NULL,
   PRIMARY KEY (idFilme)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Filme (idFilme, nome, data, restricao_idade, genero, galarduacoes, sinopse, stock)
+INSERT INTO Filme (idFilme, nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco)
 VALUES
-  (1, 'Movie 1', '2023-05-15 14:30:00', 16, 'Action', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 10),
-  (2, 'Movie 2', '2023-05-16 18:45:00', 12, 'Comedy', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 5),
-  (3, 'Movie 3', '2023-05-17 20:15:00', 18, 'Drama', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 8);
+  (1, 'Movie 1', '2023-05-15 14:30:00', 16, 'Action', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 10, 12.50),
+  (2, 'Movie 2', '2023-05-16 18:45:00', 12, 'Comedy', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 5, 11.40),
+  (3, 'Movie 3', '2023-05-17 20:15:00', 18, 'Drama', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 9, 9.60);
+
 
 -- SELECT * FROM Filme;
 
