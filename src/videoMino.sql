@@ -235,7 +235,7 @@ CREATE TABLE IF NOT EXISTS Compra (
     REFERENCES videomino.Fornecedor (idFornecedor)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO Compra (idCompra, data_criacao, data_prevista, n_artigos, preco_total, idFornecedor)
 VALUES
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS Compra_filme (
     REFERENCES videomino.Filme (idFilme)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO Compra_filme (id_compra, id_filme)
 VALUES

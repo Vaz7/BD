@@ -1,0 +1,4 @@
+idFilme,nome,data,restricao_idade,genero,galarduacoes,sinopse,stock,preco
+4,The Shawshank Redemption,1994-10-14,16,Drama,"9.3/10, 94%","Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",10,9.99
+5,The Godfather,1972-03-24,16,Crime,"9.2/10, 98%","The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",5,9.99
+6,Pulp Fiction,1994-10-14,18,Crime,"8.9/10, 94%","The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",15,9.99

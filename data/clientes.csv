@@ -1,0 +1,4 @@
+username,password,nome,nif,data_nascimento,email,n_telemovel,morada
+Henrique,password123,Henrique,123456789,1990-01-01,mark@example.com,123456789,1
+Adelio,password456,Adelio,987654321,1995-05-10,anna@example.com,987654321,2
+Goncalo,password789,Goncalo,555555555,1988-09-15,peter@example.com,555555555,3

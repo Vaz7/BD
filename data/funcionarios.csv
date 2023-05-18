@@ -1,0 +1,4 @@
+idFuncionário, nome, data_nascimento, iban, email, n_telemovel, morada
+4,Joquim Albero,1980-05-10,GB12ABCD56789012345678,johndoe@example.com,91994125,1
+5,Nelo Pereira,1985-12-15,US34EFGH90123456789012,janesmith@example.com,987654365,2
+6,Joaquim Augusto,1992-07-20,CA56IJKL34567890123456,michaeljohnson@example.com,12345316,3
