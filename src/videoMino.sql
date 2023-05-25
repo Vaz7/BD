@@ -13,10 +13,10 @@ CREATE TABLE IF NOT EXISTS Morada (
   idMorada INT NOT NULL,
   rua VARCHAR(100) NOT NULL,
   num_porta INT NOT NULL,
-  cidade VARCHAR(20) NOT NULL,
+  cidade VARCHAR(50) NOT NULL,
   codigo_postal VARCHAR(10) NOT NULL,
   PRIMARY KEY (idMorada)
-) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
        
 -- SELECT * FROM Morada 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Funcionário (
     REFERENCES videomino.Morada (idMorada)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
-) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- SELECT * FROM Funcionário;
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
     REFERENCES videomino.Morada (idMorada)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
-) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS Venda(
     REFERENCES videomino.Funcionário (idFuncionário)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8;
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
   
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS Filme (
   stock INT NOT NULL,
   preco DECIMAL(7,2) NOT NULL,
   PRIMARY KEY (idFilme)
-) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS Review(
     REFERENCES videomino.Filme (idFilme)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8;
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- SELECT * FROM Review;
@@ -161,13 +161,7 @@ CREATE TABLE IF NOT EXISTS Venda_filme(
     REFERENCES videomino.Filme (idFilme)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO Venda_filme (id_venda, id_filme)
-VALUES
-  (1, 1),
-  (1, 2),
-  (2, 3);
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- SELECT * FROM Venda_filme;
 
@@ -181,7 +175,7 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
   iban VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
   PRIMARY KEY (idFornecedor))
-ENGINE = InnoDB DEFAULT CHARSET=utf8;
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- SELECT * FROM Fornecedor;
@@ -203,7 +197,7 @@ CREATE TABLE IF NOT EXISTS Compra (
     REFERENCES videomino.Fornecedor (idFornecedor)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8;
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- SELECT * FROM Compra;
@@ -226,15 +220,8 @@ CREATE TABLE IF NOT EXISTS Compra_filme (
     REFERENCES videomino.Filme (idFilme)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8;
+ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO Compra_filme (id_compra, id_filme)
-VALUES
-  (1, 1),
-  (1, 2),
-  (2, 3),
-  (3, 1),
-  (3, 4);
 
 -- SELECT * FROM Compra_filme;
 
