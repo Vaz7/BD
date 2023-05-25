@@ -18,10 +18,6 @@ CREATE TABLE IF NOT EXISTS Morada (
   PRIMARY KEY (idMorada)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Morada (idMorada, rua, num_porta, cidade, codigo_postal)
-VALUES (1, 'Rua A', 10, 'Cidade A', '12345'),
-       (2, 'Rua B', 20, 'Cidade B', '67890'),
-       (3, 'Rua C', 30, 'Cidade C', '54321');
        
 -- SELECT * FROM Morada 
 
@@ -49,11 +45,6 @@ CREATE TABLE IF NOT EXISTS Funcionário (
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Funcionário (idFuncionário, nome, data_nascimento, iban, email, n_telemovel, morada)
-VALUES
-  (1, 'John Doe', '1990-05-15', '1234567890', 'john.doe@example.com', 123456789, 1),
-  (2, 'Jane Smith', '1985-08-20', '0987654321', 'jane.smith@example.com', 987654321, 2),
-  (3, 'David Johnson', '1992-11-10', '5555555555', 'david.johnson@example.com', 555555555, 3);
 
 -- SELECT * FROM Funcionário;
 
@@ -78,11 +69,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Cliente (username, password, nome, nif, data_nascimento, email, n_telemovel, morada)
-VALUES
-  ('john123', 'password123', 'John Doe', 123456789, '1990-05-15', 'john.doe@example.com', 123456789, 1),
-  ('jane456', 'password456', 'Jane Smith', 987654321, '1985-08-20', 'jane.smith@example.com', 987654321, 2),
-  ('david789', 'password789', 'David Johnson', 555555555, '1992-11-10', 'david.johnson@example.com', 555555555, 3);
+
 
 -- SELECT * FROM Cliente
 
@@ -113,11 +100,7 @@ CREATE TABLE IF NOT EXISTS Venda(
     ON UPDATE NO ACTION)
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Venda (idVenda, idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
-VALUES
-  (1, 'john123', 1, 3, 50.99, 1, 1, '2023-05-15 10:30:00'),
-  (2, 'jane456', 2, 2, 30.50, 2, 0, '2023-05-16 14:45:00'),
-  (3, 'david789', 1, 5, 80.75, 1, 1, '2023-05-17 09:15:00');
+
   
 -- SELECT * FROM Venda
 
@@ -137,11 +120,6 @@ CREATE TABLE IF NOT EXISTS Filme (
   PRIMARY KEY (idFilme)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Filme (idFilme, nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco)
-VALUES
-  (1, 'Movie 1', '2023-05-15 14:30:00', 16, 'Action', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 10, 12.50),
-  (2, 'Movie 2', '2023-05-16 18:45:00', 12, 'Comedy', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 5, 11.40),
-  (3, 'Movie 3', '2023-05-17 20:15:00', 18, 'Drama', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 9, 9.60);
 
 
 -- SELECT * FROM Filme;
@@ -163,11 +141,6 @@ CREATE TABLE IF NOT EXISTS Review(
     ON UPDATE NO ACTION)
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Review (idReview, rating, comentario, id_filme)
-VALUES
-  (1, 4, 'Great movie!', 1),
-  (2, 3, 'Decent movie.', 2),
-  (3, 5, 'Excellent film!', 3);
 
 -- SELECT * FROM Review;
 -- -----------------------------------------------------
@@ -210,11 +183,6 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
   PRIMARY KEY (idFornecedor))
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Fornecedor (idFornecedor, nome, nif, iban, email)
-VALUES
-  (1, 'Supplier A', 123456789, 'ABCD1234', 'supplierA@example.com'),
-  (2, 'Supplier B', 987654321, 'EFGH5678', 'supplierB@example.com'),
-  (3, 'Supplier C', 555555555, 'IJKL9999', 'supplierC@example.com');
 
 -- SELECT * FROM Fornecedor;
 
@@ -237,11 +205,6 @@ CREATE TABLE IF NOT EXISTS Compra (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO Compra (idCompra, data_criacao, data_prevista, n_artigos, preco_total, idFornecedor)
-VALUES
-  (1, '2023-05-17 10:00:00', '2023-05-20 15:00:00', 5, 100.00, 1),
-  (2, '2023-05-18 11:30:00', '2023-05-21 12:00:00', 3, 75.50, 2),
-  (3, '2023-05-19 14:45:00', '2023-05-22 10:30:00', 8, 200.25, 3);
 
 -- SELECT * FROM Compra;
 

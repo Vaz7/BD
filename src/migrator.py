@@ -5,7 +5,7 @@ import mysql.connector
 cnx = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='1688',
+    password='1234',
     database='videomino'
 )
 cursor = cnx.cursor()
