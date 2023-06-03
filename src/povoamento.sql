@@ -56,38 +56,7 @@ INSERT INTO Fornecedor (idFornecedor, nome, nif, iban, email) VALUES
 (3, 'Pedro Almeida', 555555555, 'PT50002700000001234567855', 'pedroalmeida@gmail.com'),
 (4, 'António Hneriques', 111111111, 'PT50002700000001234567866', 'antoniohenriques@gmail.com'),
 (5, 'Miguel Costa', 999999999, 'PT50002700000001234567877', 'miguelcosta@gmail.com');
-
-INSERT INTO Review (idReview, rating, comentario, id_Filme) VALUES
-  (1, 8, 'Um filme cheio de ação e reviravoltas emocionantes.', 1),
-  (2, 6, 'A trama é interessante, mas o final deixou a desejar.', 2),
-  (3, 9, 'Uma história de amor apaixonante e envolvente.', 3),
-  (4, 7, 'As cenas de ação são empolgantes, mas o enredo poderia ser mais desenvolvido.', 4),
-  (5, 8, 'Um filme subaquático repleto de adrenalina.', 5),
-  (6, 9, 'As atuações são incríveis e a história é emocionante.', 6),
-  (7, 5, 'A trama é previsível e os diálogos são fracos.', 7),
-  (8, 8, 'Uma experiência visualmente deslumbrante.', 8),
-  (9, 7, 'Um mistério intrigante que mantém o espectador interessado.', 9),
-  (10, 9, 'Uma aventura emocionante e cheia de surpresas.', 10),
-  (11, 6, 'O romance é forçado e o enredo não convence.', 11),
-  (12, 8, 'Uma ilha cheia de mistérios que cativa o espectador.', 12),
-  (13, 7, 'O Terror é envolvente, mas algumas cenas são previsíveis.', 13),
-  (14, 9, 'Uma história comovente que toca o coração.', 14),
-  (15, 8, 'As cenas de ação são emocionantes e bem coreografadas.', 15),
-  (16, 7, 'Um Terror com momentos de tensão e Terror.', 16),
-  (17, 6, 'O mistério é interessante, mas o desfecho é decepcionante.', 17),
-  (18, 8, 'Uma aventura divertida e repleta de ação.', 18),
-  (19, 7, 'Os efeitos visuais são impressionantes, mas o enredo é fraco.', 19),
-  (20, 9, 'Um Terror eletrizante que mantém o espectador vidrado.', 20),
-  (21, 8, 'Uma jornada emocionante cheia de perigos e descobertas.', 21),
-  (22, 6, 'O romance é clichê e previsível.', 22),
-  (23, 9, 'Uma aventura cheia de adrenalina e paisagens deslumbrantes.', 23),
-  (24, 7, 'Um filme de ficção científica intrigante e cheio de reviravoltas.', 24),
-  (25, 8, 'Uma história de vingança bem construída e cativante.', 25),
-  (26, 9, 'Os efeitos especiais são impressionantes e a ação é eletrizante.', 26),
-  (27, 6, 'O enredo é confuso e o ritmo do filme é lento.', 27),
-  (28, 8, 'Uma comédia divertida e cheia de momentos hilários.', 28),
-  (29, 7, 'As atuações são boas, mas a história é previsível.', 29),
-  (30, 9, 'Um filme emocionante que faz refletir sobre a vida.', 30);    
+   
 
 INSERT INTO Filme (idFilme, nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco) VALUES
     (1, 'Aventuras no Espaço', '2000-01-01', 12, 'Ficção Científica', 'Prémio de Melhores Efeitos Especiais', 'Uma emocionante jornada pelo espaço sideral.', 10, 9.99),
@@ -131,6 +100,54 @@ INSERT INTO Filme (idFilme, nome, data, restricao_idade, genero, galarduacoes, s
     (39, 'O Mistério do Manuscrito', '1998-02-15', 12, 'Mistério', 'Prémio de Melhor Roteiro', 'Um manuscrito antigo com segredos que podem abalar a sociedade.', 5, 8.90),
     (40, 'Aventuras no Velho Oeste', '2000-11-30', 12, 'Aventura', 'Nenhum', 'Uma jornada emocionante pela era dos cowboys.', 10, 9.12);
 
+INSERT INTO Review (idReview, rating, comentario, id_Filme) VALUES
+  (1, 8, 'Um filme cheio de ação e reviravoltas emocionantes.', 1),
+  (2, 6, 'A trama é interessante, mas o final deixou a desejar.', 2),
+  (3, 9, 'Uma história de amor apaixonante e envolvente.', 3),
+  (4, 7, 'As cenas de ação são empolgantes, mas o enredo poderia ser mais desenvolvido.', 4),
+  (5, 8, 'Um filme subaquático repleto de adrenalina.', 5),
+  (6, 9, 'As atuações são incríveis e a história é emocionante.', 6),
+  (7, 5, 'A trama é previsível e os diálogos são fracos.', 7),
+  (8, 8, 'Uma experiência visualmente deslumbrante.', 8),
+  (9, 7, 'Um mistério intrigante que mantém o espectador interessado.', 9),
+  (10, 9, 'Uma aventura emocionante e cheia de surpresas.', 10),
+  (11, 6, 'O romance é forçado e o enredo não convence.', 11),
+  (12, 8, 'Uma ilha cheia de mistérios que cativa o espectador.', 12),
+  (13, 7, 'O Terror é envolvente, mas algumas cenas são previsíveis.', 13),
+  (14, 9, 'Uma história comovente que toca o coração.', 14),
+  (15, 8, 'As cenas de ação são emocionantes e bem coreografadas.', 15),
+  (16, 7, 'Um Terror com momentos de tensão e Terror.', 16),
+  (17, 6, 'O mistério é interessante, mas o desfecho é decepcionante.', 17),
+  (18, 8, 'Uma aventura divertida e repleta de ação.', 18),
+  (19, 7, 'Os efeitos visuais são impressionantes, mas o enredo é fraco.', 19),
+  (20, 9, 'Um Terror eletrizante que mantém o espectador vidrado.', 20),
+  (21, 8, 'Uma jornada emocionante cheia de perigos e descobertas.', 21),
+  (22, 6, 'O romance é clichê e previsível.', 22),
+  (23, 9, 'Uma aventura cheia de adrenalina e paisagens deslumbrantes.', 23),
+  (24, 7, 'Um filme de ficção científica intrigante e cheio de reviravoltas.', 24),
+  (25, 8, 'Uma história de vingança bem construída e cativante.', 25),
+  (26, 9, 'Os efeitos especiais são impressionantes e a ação é eletrizante.', 26),
+  (27, 6, 'O enredo é confuso e o ritmo do filme é lento.', 27),
+  (28, 8, 'Uma comédia divertida e cheia de momentos hilários.', 28),
+  (29, 7, 'As atuações são boas, mas a história é previsível.', 29),
+  (30, 9, 'Um filme emocionante que faz refletir sobre a vida.', 30); 
+  
+
+INSERT INTO Venda (idVenda, idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
+VALUES
+    (1, 'joaosilva', 1, 1, 29.38, true, false, '2023-05-01'), 
+    (2, 'pedrofernandes', 2, 2, 33.37, false, true, '2023-05-02'), 
+    (3, 'sofiaalmeida', 1, 3, 49.59, false, true, '2023-05-03'), 
+    (4, 'joaosilva', 3, 4, 42.16, true, false, '2023-05-04'), 
+    (5, 'mariasantos', 2, 5, 10.99, false, true, '2023-05-05'), 
+    (6, 'catarinasantos', 2, 6, 58.95, false, true, '2023-05-06'), 
+    (7, 'miguelsantos', 2, 1, 13.49, true, false, '2023-05-07'), 
+    (8, 'ruicosta', 3, 2, 52.81, false, true, '2023-05-08'), 
+    (9, 'mariasantos', 1, 3, 20.44, false, true, '2023-05-09'), 
+    (10, 'antoniopereira', 1, 4, 31.98, true, false, '2023-05-10'), 
+    (11, 'andreAlmeida', 1, 5, 48.27, false, true, '2023-05-11'), 
+    (12, 'catarinasantos', 2, 6, 53.96, false, true, '2023-05-12');
+
 INSERT INTO Venda_filme (id_venda, id_Filme)
 VALUES
   (1, 1),
@@ -172,24 +189,6 @@ VALUES
   (8, 39),
   (3, 40),
   (6, 23);
-
-INSERT INTO Venda (idVenda, idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
-VALUES
-    (1, 'joaosilva', 1, 1, 29.38, true, false, '2023-05-01'), 
-    (2, 'pedrofernandes', 2, 2, 33,37, false, true, '2023-05-02'), 
-    (3, 'sofiaalmeida', 1, 3, 49.59, false, true, '2023-05-03'), 
-    (4, 'joaosilva', 3, 4, 42.16, true, false, '2023-05-04'), 
-    (5, 'mariasantos', 2, 5, 10.99, false, true, '2023-05-05'), 
-    (6, 'catarinasantos', 2, 6, 58.95, false, true, '2023-05-06'), 
-    (7, 'miguelsantos', 2, 1, 13.49, true, false, '2023-05-07'), 
-    (8, 'ruicosta', 3, 2, 52.81, false, true, '2023-05-08'), 
-    (9, 'mariasantos', 1, 3, 20.44, false, true, '2023-05-09'), 
-    (10, 'antoniopereira', 1, 4, 31.98, true, false, '2023-05-10'), 
-    (11, 'andreAlmeida', 1, 5, 48.27, false, true, '2023-05-11'), 
-    (12, 'catarinasantos', 2, 6, 53.96, false, true, '2023-05-12'),
-
-
-
 
 
 INSERT INTO Compra (idCompra, data_criacao, data_prevista, n_artigos, preco_total, idFornecedor)

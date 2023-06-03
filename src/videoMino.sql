@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Morada (
 CREATE TABLE IF NOT EXISTS Funcionário (
   idFuncionário INT NOT NULL,
   nome VARCHAR(45) NOT NULL,
-  data_nascimento DATETIME NOT NULL,
+  data_nascimento DATE NOT NULL,
   iban VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
   n_telemovel INT NOT NULL,
@@ -44,18 +44,19 @@ CREATE TABLE IF NOT EXISTS Funcionário (
 -- Table Cliente
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Cliente (
-  username VARCHAR(20) NOT NULL,
-  password VARCHAR(20) NOT NULL,
-  nome VARCHAR(45) NOT NULL,
-  nif INT NOT NULL,
-  data_nascimento DATETIME NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  n_telemovel INT NOT NULL,
-  morada INT NOT NULL,
-  PRIMARY KEY (username),
-  FOREIGN KEY (morada)
-    REFERENCES videomino.Morada (idMorada)
+    username VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    nome VARCHAR(45) NOT NULL,
+    nif INT NOT NULL,
+    data_nascimento DATE NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    n_telemovel INT NOT NULL,
+    morada INT NOT NULL,
+    PRIMARY KEY (username),
+    FOREIGN KEY (morada)
+        REFERENCES videomino.Morada (idMorada)
 );
+
 
 
 
@@ -72,7 +73,7 @@ CREATE TABLE IF NOT EXISTS Venda(
   preco_final DECIMAL(7,2) NOT NULL,
   metodo TINYINT NOT NULL,
   autenticidade TINYINT NOT NULL,
-  data DATETIME NOT NULL,
+  data DATE NOT NULL,
   PRIMARY KEY (idVenda),
   FOREIGN KEY (idCliente)
     REFERENCES videomino.Cliente (username),
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS Venda(
 CREATE TABLE IF NOT EXISTS Filme (
   idFilme INT NOT NULL,
   nome VARCHAR(100) NOT NULL,
-  data DATETIME NOT NULL,
+  data DATE NOT NULL,
   restricao_idade INT NOT NULL,
   genero VARCHAR(25) NOT NULL,
   galarduacoes TEXT NOT NULL,
@@ -154,8 +155,8 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Compra (
   idCompra INT NOT NULL,
-  data_criacao DATETIME NOT NULL,
-  data_prevista DATETIME NOT NULL,
+  data_criacao DATE NOT NULL,
+  data_prevista DATE NOT NULL,
   n_artigos INT NOT NULL,
   preco_total DECIMAL(7,2) NOT NULL,
   idFornecedor INT NOT NULL,
