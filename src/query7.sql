@@ -1,9 +1,17 @@
 USE videomino;
 
--- Os funcionários podem pedir ao sistema uma lista com todos os filmes
--- em stock e a sua quantidade 
+-- Os funcionários podem verificar no sistema o stock de dado filme
 
 
--- IGUAL AO QUERY 3, ESTE A ÚNICA DIFERENÇA É ESPECIFICAR FUNCIONÁRIO 
+DELIMITER $$
+CREATE PROCEDURE VerificaFilmeStock (IN movie INT)
+BEGIN 
+	SELECT idFilme, nome, stock
+    FROM Filme
+    WHERE idFilme = movie;
+END $$
+DELIMITER ;
 
-SELECT * FROM Filme;
+DROP PROCEDURE VerificaFilmeStock;
+
+CALL VerificaFilmeStock (1);

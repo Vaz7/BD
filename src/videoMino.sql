@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Morada (
   cidade VARCHAR(50) NOT NULL,
   codigo_postal VARCHAR(10) NOT NULL,
   PRIMARY KEY (idMorada)
-) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
        
 -- SELECT * FROM Morada 
@@ -33,17 +33,9 @@ CREATE TABLE IF NOT EXISTS Funcionário (
   n_telemovel INT NOT NULL,
   morada INT NOT NULL,
   PRIMARY KEY (idFuncionário),
-  UNIQUE INDEX n_telemovel_UNIQUE (n_telemovel ASC) VISIBLE,
-  UNIQUE INDEX email_UNIQUE (email ASC) VISIBLE,
-  UNIQUE INDEX iban_UNIQUE (iban ASC) VISIBLE,
-  UNIQUE INDEX idFuncionário_UNIQUE (idFuncionário ASC) VISIBLE,
-  INDEX morada_funcionario (morada ASC) VISIBLE,
-  CONSTRAINT fk_morada_funcionario
-    FOREIGN KEY (morada)
+  FOREIGN KEY (morada)
     REFERENCES videomino.Morada (idMorada)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 -- SELECT * FROM Funcionário;
@@ -61,13 +53,9 @@ CREATE TABLE IF NOT EXISTS Cliente (
   n_telemovel INT NOT NULL,
   morada INT NOT NULL,
   PRIMARY KEY (username),
-  INDEX morada_cliente (morada ASC) VISIBLE,
-  CONSTRAINT fk_morada_cliente
-    FOREIGN KEY (morada)
+  FOREIGN KEY (morada)
     REFERENCES videomino.Morada (idMorada)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 
@@ -86,23 +74,15 @@ CREATE TABLE IF NOT EXISTS Venda(
   autenticidade TINYINT NOT NULL,
   data DATETIME NOT NULL,
   PRIMARY KEY (idVenda),
-  INDEX cliente_idx (idCliente ASC) VISIBLE,
-  INDEX vendedor_idx (idFuncionário ASC) VISIBLE,
-  CONSTRAINT cliente
-    FOREIGN KEY (idCliente)
-    REFERENCES videomino.Cliente (username)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT vendedor
-    FOREIGN KEY (idFuncionário)
+  FOREIGN KEY (idCliente)
+    REFERENCES videomino.Cliente (username),
+  FOREIGN KEY (idFuncionário)
     REFERENCES videomino.Funcionário (idFuncionário)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
   
--- SELECT * FROM Venda
+-- SELECT * FROM Venda INNER JOIN Venda_filme vf ON vf.id_venda = Venda.idVenda WHERE vf.id_venda = 17;
 
 -- -----------------------------------------------------
 -- Table Filme
@@ -118,7 +98,7 @@ CREATE TABLE IF NOT EXISTS Filme (
   stock INT NOT NULL,
   preco DECIMAL(7,2) NOT NULL,
   PRIMARY KEY (idFilme)
-) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 
@@ -133,13 +113,9 @@ CREATE TABLE IF NOT EXISTS Review(
   comentario TEXT(1000) NOT NULL,
   id_filme INT NOT NULL,
   PRIMARY KEY (idReview),
-  INDEX id_filme_idx (id_filme ASC) VISIBLE,
-  CONSTRAINT id_filme
-    FOREIGN KEY (id_filme)
+  FOREIGN KEY (id_filme)
     REFERENCES videomino.Filme (idFilme)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 -- SELECT * FROM Review;
@@ -150,18 +126,11 @@ CREATE TABLE IF NOT EXISTS Venda_filme(
   id_venda INT NOT NULL,
   id_filme INT NOT NULL,
   PRIMARY KEY (id_venda, id_filme),
-  INDEX filme_idx (id_filme ASC) VISIBLE,
-  CONSTRAINT venda
-    FOREIGN KEY (id_venda)
-    REFERENCES videomino.Venda (idVenda)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT filme
-    FOREIGN KEY (id_filme)
+  FOREIGN KEY (id_venda)
+    REFERENCES videomino.Venda (idVenda),
+  FOREIGN KEY (id_filme)
     REFERENCES videomino.Filme (idFilme)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 -- SELECT * FROM Venda_filme;
 
@@ -174,8 +143,8 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
   nif INT NOT NULL,
   iban VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
-  PRIMARY KEY (idFornecedor))
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (idFornecedor)
+  );
 
 
 -- SELECT * FROM Fornecedor;
@@ -191,13 +160,9 @@ CREATE TABLE IF NOT EXISTS Compra (
   preco_total DECIMAL(7,2) NOT NULL,
   idFornecedor INT NOT NULL,
   PRIMARY KEY (idCompra),
-  INDEX id_fornecedor_idx (idFornecedor ASC) VISIBLE,
-  CONSTRAINT id_fornecedor
-    FOREIGN KEY (idFornecedor)
+  FOREIGN KEY (idFornecedor)
     REFERENCES videomino.Fornecedor (idFornecedor)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 -- SELECT * FROM Compra;
@@ -209,18 +174,11 @@ CREATE TABLE IF NOT EXISTS Compra_filme (
   id_compra INT NOT NULL,
   id_filme INT NOT NULL,
   PRIMARY KEY (id_compra, id_filme),
-  INDEX idFilme_idx (id_filme ASC) VISIBLE,
-  CONSTRAINT idcompra
-    FOREIGN KEY (id_compra)
-    REFERENCES videomino.Compra (idCompra)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT idFilme
-    FOREIGN KEY (id_filme)
+  FOREIGN KEY (id_compra)
+    REFERENCES videomino.Compra (idCompra),
+  FOREIGN KEY (id_filme)
     REFERENCES videomino.Filme (idFilme)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 
 -- SELECT * FROM Compra_filme;

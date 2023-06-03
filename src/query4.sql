@@ -1,8 +1,14 @@
 USE videomino;
 
-SET @lower_price = 0;
-SET @upper_price = 10;
 
--- vale a pena fazer um  programa para dar estes valores?
+DELIMITER $$
+CREATE PROCEDURE FilmesEntrePreços (IN preco1 INT, IN preco2 INT)
+BEGIN
+	SELECT * 
+    FROM Filme 
+    WHERE preco BETWEEN preco1 AND preco2;
+END $$
+DELIMITER ;
 
-SELECT * FROM Filme WHERE preco BETWEEN @lower_price AND @upper_price;
+CALL FilmesEntrePreços (9, 10);
+

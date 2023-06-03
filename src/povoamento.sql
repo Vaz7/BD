@@ -29,9 +29,9 @@ INSERT INTO Funcionário (idFuncionário, nome, data_nascimento, iban, email, n_
 (3, 'Pedro Costa', '1995-08-20', 'PT000000000567891234', 'pedro95.costa@video.com', '934567890', 23);
 
 INSERT INTO Cliente (username, password, nome, nif, data_nascimento, email, n_telemovel, morada) VALUES
-    ('joaosilva', 'pass123', 'João Silva', 123456789, '1980-05-10', 'joaosilva@gmail.com', 912345678, 1),
-    ('mariasantos', 'pass456', 'Maria Santos', 937654321, '1992-12-15', 'mariasantos@gmail.com', 913456789, 2),
-    ('antoniopereira', 'pass789', 'António Pereira', 456789123, '1985-07-20', 'antoniopereira@gmail.com', 934567690, 3),
+    ('joaosilva', 'pass123', 'João Silva', 123456789, '2001-05-10', 'joaosilva@gmail.com', 912345678, 1),
+    ('mariasantos', 'pass456', 'Maria Santos', 937654321, '2003-12-15', 'mariasantos@gmail.com', 913456789, 2),
+    ('antoniopereira', 'pass789', 'António Pereira', 456789123, '2000-07-20', 'antoniopereira@gmail.com', 934567690, 3),
     ('anacosta', 'passabc', 'Ana Costa', 721654987, '1990-03-05', 'anacosta@gmail.com', '945678901', 4),
     ('pedrofernandes', 'passdef', 'Pedro Fernandes', 654987221, '1988-09-12', 'pedrofernandes@gmail.com', 916789018, 5),
     ('sofiaalmeida', 'passtuv', 'Sofia Almeida', 789326594, '1995-06-18', 'sofiaalmeida@gmail.com', 969890123, 6),
@@ -201,7 +201,7 @@ INSERT INTO Venda_filme (id_venda, id_Filme)
 VALUES
   (1, 1),
   (2, 2),
-  (2, 3),
+  (2, 4),
   (3, 4),
   (3, 5),
   (3, 6),
