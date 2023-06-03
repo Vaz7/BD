@@ -126,6 +126,7 @@ CREATE TABLE IF NOT EXISTS Review(
 CREATE TABLE IF NOT EXISTS Venda_filme(
   id_venda INT NOT NULL,
   id_filme INT NOT NULL,
+  quantidade INT NOT NULL,
   PRIMARY KEY (id_venda, id_filme),
   FOREIGN KEY (id_venda)
     REFERENCES videomino.Venda (idVenda),
@@ -165,7 +166,7 @@ CREATE TABLE IF NOT EXISTS Compra (
     REFERENCES videomino.Fornecedor (idFornecedor)
 );
 
-
+-- DROP TABLE Compra;
 -- SELECT * FROM Compra;
 
 -- -----------------------------------------------------
@@ -174,6 +175,7 @@ CREATE TABLE IF NOT EXISTS Compra (
 CREATE TABLE IF NOT EXISTS Compra_filme (
   id_compra INT NOT NULL,
   id_filme INT NOT NULL,
+  quantidade INT NOT NULL,
   PRIMARY KEY (id_compra, id_filme),
   FOREIGN KEY (id_compra)
     REFERENCES videomino.Compra (idCompra),
