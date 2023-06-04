@@ -1,4 +1,5 @@
 username,password,nome,nif,data_nascimento,email,n_telemovel,morada
-Henrique,password123,Henrique,123456789,1990-01-01,mark@example.com,123456789,1
-Adelio,password456,Adelio,987654321,1995-05-10,anna@example.com,987654321,2
-Goncalo,password789,Goncalo,555555555,1988-09-15,peter@example.com,555555555,3
+HenriqueVaz,password123,Henrique Vaz,123456789,2001-05-18,henrique@hotmailcom,910910910,1
+AdelioFernandes,password456,Adelio Fernandes,123512567,1995-05-10,adelio@gmail.com,987654321,2
+GoncaloGoncalves,password789,Goncalo Gonçalves,957638956,1988-09-15,goncalo@sapo.com,919912341,3
+HenriquePereira,password333,Henrique Pereira,987654321,2001-12-12,henriquep@gmail.com,916457689,1

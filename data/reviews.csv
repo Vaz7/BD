@@ -1,4 +1,4 @@
-idReview,rating,comentario,id_filme
-4,8,"Great movie! Highly recommended.",4
-5,7,"Decent film, but could have been better.",5
-6,9,"Absolutely loved it. A must-watch!",6
+rating,comentario,id_filme
+8,"Great movie! Highly recommended.",2
+7,"Decent film, but could have been better.",1
+9,"Absolutely loved it. A must-watch!",3

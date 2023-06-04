@@ -1,4 +1,4 @@
-idFornecedor,nome,nif,iban,email
-4,ABC Distributors,123456789,PT123456789,abc@example.com
-5,XYZ Suppliers,987654321,PT987654321,xyz@example.com
-6,DEF Manufacturers,654321987,PT654321987,def@example.com
+nome,nif,iban,email
+Joaquim Alberto,123456789,PT123456789,quim@gmail.com
+Carlos Pereira,987654321,PT987654321,pereira@sapo.com
+Armindo Araujo,654321987,PT654321987,mindo@gmail.com

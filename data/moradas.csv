@@ -1,4 +1,4 @@
-idMorada,rua,num_porta,cidade,codigo_postal
-4,Street A,123,City X,12345
-5,Street B,456,City Y,67890
-6,Street C,789,City Z,98765
+rua,num_porta,cidade,codigo_postal
+Rua do Carmo,25,Lisboa,1200-090
+Rua da Constituição,500,Porto,4200-195
+Avenida da Liberdade,100,Lisboa,1250-096

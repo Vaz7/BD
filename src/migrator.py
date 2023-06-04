@@ -11,6 +11,27 @@ cnx = mysql.connector.connect(
 cursor = cnx.cursor()
 
 
+
+#migrar para moradas
+
+# Read data from the CSV file
+with open('../data/moradas.csv', 'r') as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip the header row
+    for row in reader:
+        rua = row[0]
+        num_porta = int(row[1])
+        cidade = row[2]
+        codigo_postal = row[3]
+
+        # Insert the data into the Morada table
+        query = "INSERT INTO Morada (rua, num_porta, cidade, codigo_postal) VALUES (%s, %s, %s, %s)"
+        values = (rua, num_porta, cidade, codigo_postal)
+        cursor.execute(query, values)
+
+# Commit the changes and close the connection
+cnx.commit()
+
 #migrar para clientes
 
 # Open the CSV file
@@ -39,29 +60,6 @@ with open('../data/clientes.csv', 'r') as file:
 
 
 
-#migrar para moradas
-
-# Read data from the CSV file
-with open('../data/moradas.csv', 'r') as file:
-    reader = csv.reader(file)
-    next(reader)  # Skip the header row
-    for row in reader:
-        idMorada = int(row[0])
-        rua = row[1]
-        num_porta = int(row[2])
-        cidade = row[3]
-        codigo_postal = row[4]
-
-        # Insert the data into the Morada table
-        query = "INSERT INTO Morada (idMorada, rua, num_porta, cidade, codigo_postal) VALUES (%s, %s, %s, %s, %s)"
-        values = (idMorada, rua, num_porta, cidade, codigo_postal)
-        cursor.execute(query, values)
-
-# Commit the changes and close the connection
-cnx.commit()
-
-
-
 #migrar para funcionarios
 
 # Read data from CSV and insert into the table
@@ -70,19 +68,18 @@ with open('../data/funcionarios.csv', 'r') as csvfile:
     next(csvreader)  # Skip header row
     
     for row in csvreader:
-        idFuncionário = int(row[0])
-        nome = row[1]
-        data_nascimento = row[2]
-        iban = row[3]
-        email = row[4]
-        n_telemovel = int(row[5])
-        morada = int(row[6])
+        nome = row[0]
+        data_nascimento = row[1]
+        iban = row[2]
+        email = row[3]
+        n_telemovel = int(row[4])
+        morada = int(row[5])
         
         insert_query = '''
-        INSERT INTO Funcionário (idFuncionário, nome, data_nascimento, iban, email, n_telemovel, morada)
-        VALUES (%s, %s, %s, %s, %s, %s, %s)
+        INSERT INTO Funcionário (nome, data_nascimento, iban, email, n_telemovel, morada)
+        VALUES (%s, %s, %s, %s, %s, %s)
         '''
-        values = (idFuncionário, nome, data_nascimento, iban, email, n_telemovel, morada)
+        values = (nome, data_nascimento, iban, email, n_telemovel, morada)
         cursor.execute(insert_query, values)
     
     cnx.commit()
@@ -95,20 +92,19 @@ with open('../data/vendas.csv', 'r') as csvfile:
     next(csvreader)  # Skip the header row
 
     for row in csvreader:
-        idVenda = int(row[0])
-        idCliente = row[1]
-        idFuncionário = int(row[2])
-        n_artigos = int(row[3])
-        preco_final = float(row[4])
-        metodo = int(row[5])
-        autenticidade = int(row[6])
-        data = row[7]
+        idCliente = row[0]
+        idFuncionário = int(row[1])
+        n_artigos = int(row[2])
+        preco_final = float(row[3])
+        metodo = int(row[4])
+        autenticidade = int(row[5])
+        data = row[6]
 
         insert_query = """
-            INSERT INTO Venda (idVenda, idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO Venda (idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
-        values = (idVenda, idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
+        values = (idCliente, idFuncionário, n_artigos, preco_final, metodo, autenticidade, data)
         cursor.execute(insert_query, values)
 
     # Commit the changes and close the cursor
@@ -122,21 +118,20 @@ with open('../data/filmes.csv', 'r') as file:
     reader = csv.reader(file)
     next(reader)  # Skip the header row
     for row in reader:
-        id_filme = int(row[0])
-        nome = row[1]
-        data = row[2]
-        restricao_idade = int(row[3])
-        genero = row[4]
-        galarduacoes = row[5]
-        sinopse = row[6]
-        stock = int(row[7])
-        preco = float(row[8])
+        nome = row[0]
+        data = row[1]
+        restricao_idade = int(row[2])
+        genero = row[3]
+        galarduacoes = row[4]
+        sinopse = row[5]
+        stock = int(row[6])
+        preco = float(row[7])
         
         # Inserting data into the Filme table
         cursor.execute("""
-            INSERT INTO Filme (idFilme, nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (id_filme, nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco))
+            INSERT INTO Filme (nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        """, (nome, data, restricao_idade, genero, galarduacoes, sinopse, stock, preco))
 
     # Committing the changes to the database
     cnx.commit()
@@ -150,16 +145,15 @@ with open("../data/reviews.csv", "r") as file:
     next(reader)  # Skip the header row
     for row in reader:
         # Extract values from the CSV row
-        idReview = int(row[0])
-        rating = int(row[1])
-        comentario = row[2]
-        id_filme = int(row[3])
+        rating = int(row[0])
+        comentario = row[1]
+        id_filme = int(row[2])
         
         # Execute the INSERT statement
         cursor.execute("""
-            INSERT INTO Review (idReview, rating, comentario, id_filme)
-            VALUES (%s, %s, %s, %s)
-        """, (idReview, rating, comentario, id_filme))
+            INSERT INTO Review (rating, comentario, id_filme)
+            VALUES (%s, %s, %s)
+        """, (rating, comentario, id_filme))
 
 # Commit the changes to the database
 cnx.commit()
@@ -176,15 +170,14 @@ with open('../data/venda_filmes.csv', 'r') as file:
     for row in reader:
         id_venda = int(row[0])
         id_filme = int(row[1])
-
+        quantidade = int(row[2])
         # Insert the data into the Venda_filme table
         cursor.execute("""
-            INSERT INTO Venda_filme (id_venda, id_filme)
-            VALUES (%s, %s)
-        """, (id_venda, id_filme))
+            INSERT INTO Venda_filme (id_venda, id_filme, quantidade)
+            VALUES (%s, %s, %s)
+        """, (id_venda, id_filme, quantidade))
 
-    
-    cnx.commit()
+cnx.commit()
 
 
 #migrar para fornecedores
@@ -195,17 +188,16 @@ with open('../data/fornecedores.csv', 'r') as file:
     next(csv_data)  # Skip the header row
 
     for row in csv_data:
-        idFornecedor = int(row[0])
-        nome = row[1]
-        nif = int(row[2])
-        iban = row[3]
-        email = row[4]
+        nome = row[0]
+        nif = int(row[1])
+        iban = row[2]
+        email = row[3]
 
         # Insert the data into the Fornecedor table
         cursor.execute("""
-            INSERT INTO Fornecedor (idFornecedor, nome, nif, iban, email)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (idFornecedor, nome, nif, iban, email))
+            INSERT INTO Fornecedor (nome, nif, iban, email)
+            VALUES (%s, %s, %s, %s)
+        """, (nome, nif, iban, email))
 
 # Commit the changes to the database
 cnx.commit()
@@ -218,18 +210,17 @@ with open('../data/compras.csv', 'r') as file:
     next(csv_data)  # Skip the header row
 
     for row in csv_data:
-        idCompra = int(row[0])
-        data_criacao = row[1]
-        data_prevista = row[2]
-        n_artigos = int(row[3])
-        preco_total = float(row[4])
-        idFornecedor = int(row[5])
+        
+        data = row[0]
+        n_artigos = int(row[1])
+        preco_total = float(row[2])
+        idFornecedor = int(row[3])
 
         # Insert the row into the Compra table
         cursor.execute("""
-            INSERT INTO Compra (idCompra, data_criacao, data_prevista, n_artigos, preco_total, idFornecedor)
-            VALUES (%s, %s, %s, %s, %s, %s)
-        """, (idCompra, data_criacao, data_prevista, n_artigos, preco_total, idFornecedor))
+            INSERT INTO Compra (data,n_artigos, preco_total, idFornecedor)
+            VALUES (%s, %s, %s, %s)
+        """, (data, n_artigos, preco_total, idFornecedor))
 
 # Commit the changes and close the connection
 cnx.commit()
@@ -244,13 +235,13 @@ with open('../data/compra_filmes.csv', 'r') as file:
     for row in reader:
         id_compra = int(row[0])
         id_filme = int(row[1])
-        
+        quantidade = int(row[2])
         insert_query = """
-            INSERT INTO Compra_filme (id_compra, id_filme)
-            VALUES (%s, %s)
+            INSERT INTO Compra_filme (id_compra, id_filme,quantidade)
+            VALUES (%s, %s,%s)
         """
         
-        cursor.execute(insert_query, (id_compra, id_filme))
+        cursor.execute(insert_query, (id_compra, id_filme,quantidade))
         cnx.commit()
 
 
