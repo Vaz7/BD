@@ -4,6 +4,7 @@ USE videomino;
 -- DROP USER 'admin'@'localhost';
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON videomino.* TO 'admin'@'localhost';
+REVOKE DROP ON videomino.* FROM 'admin'@'localhost';
 
 -- FUNCIONARIO
 -- DROP USER 'funcionario'@'localhost';
