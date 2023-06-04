@@ -5,8 +5,7 @@ SELECT idFilme AS "ID", nome AS "Nome do Filme", data AS "Data de Lançamento", 
 	   genero AS "Categoria", galarduacoes AS "Galardoações", sinopse AS "Sinopse", preco AS "Preço"
 FROM Filme;
 
-SELECT *
-FROM FilmeView;
+-- SELECT * FROM FilmeView;
 
 -- VIEW DE CLIENTES
 
@@ -18,5 +17,18 @@ FROM Cliente AS c
 INNER JOIN Morada AS m
 ON c.morada = m.idMorada;
 
-SELECT *
-FROM ClienteView;
+-- SELECT * FROM ClienteView;
+
+
+CREATE VIEW VendasView AS
+SELECT v.idVenda AS "ID Venda", v.n_artigos AS "Nº Artigos", v.preco_final AS "Preço",
+	   v.data AS "Data de Venda", c.username AS "Username Cliente", f.nome AS "Filme",
+       vf.quantidade AS "Quantidade"
+FROM Venda AS v
+INNER JOIN Cliente AS c ON c.username = v.idCliente
+INNER JOIN Venda_filme AS vf ON v.idVenda = vf.id_venda
+INNER JOIN Filme AS f ON vf.id_filme = f.idFilme
+ORDER BY v.data DESC, v.idVenda DESC;
+
+-- SELECT * FROM VendasView;
+
