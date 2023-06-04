@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS Funcionário (
   nome VARCHAR(45) NOT NULL,
   data_nascimento DATE NOT NULL,
   iban VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
+  email VARCHAR(100) NOT NULL,
   n_telemovel INT NOT NULL,
   morada INT NOT NULL,
   PRIMARY KEY (idFuncionário),
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
     nome VARCHAR(45) NOT NULL,
     nif INT NOT NULL,
     data_nascimento DATE NOT NULL,
-    email VARCHAR(45) NOT NULL,
+    email VARCHAR(100) NOT NULL,
     n_telemovel INT NOT NULL,
     morada INT NOT NULL,
     PRIMARY KEY (username),
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
   nome VARCHAR(45) NOT NULL,
   nif INT NOT NULL,
   iban VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
+  email VARCHAR(100) NOT NULL,
   PRIMARY KEY (idFornecedor)
   );
 
@@ -156,8 +156,7 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Compra (
   idCompra INT NOT NULL,
-  data_criacao DATE NOT NULL,
-  data_prevista DATE NOT NULL,
+  data DATE NOT NULL,
   n_artigos INT NOT NULL,
   preco_total DECIMAL(7,2) NOT NULL,
   idFornecedor INT NOT NULL,
