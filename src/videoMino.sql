@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS Filme (
   data DATE NOT NULL,
   restricao_idade INT NOT NULL,
   genero VARCHAR(25) NOT NULL,
-  galarduacoes TEXT NOT NULL,
+  galarduacoes TEXT NULL,
   sinopse TEXT NOT NULL,
   stock INT NOT NULL,
   preco DECIMAL(7,2) NOT NULL,
