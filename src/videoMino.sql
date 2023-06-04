@@ -10,7 +10,7 @@ USE videomino;
 -- Table Morada
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Morada (
-  idMorada INT NOT NULL,
+  idMorada INT NOT NULL AUTO_INCREMENT,
   rua VARCHAR(100) NOT NULL,
   num_porta INT NOT NULL,
   cidade VARCHAR(50) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Morada (
 -- Table Funcionário
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Funcionário (
-  idFuncionário INT NOT NULL AUTO_INCREMENT,
+  idFuncionário INT NOT NULL,
   nome VARCHAR(45) NOT NULL,
   data_nascimento DATE NOT NULL,
   iban VARCHAR(45) NOT NULL,

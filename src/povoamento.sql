@@ -1,8 +1,8 @@
-INSERT INTO Morada (idMorada, rua, num_porta, cidade, codigo_postal) VALUES
-    (1, 'Rua José Castilha', 78, 'Lisboa', '1000-001'),
-    (2, 'Rua Santo Padre José', 2, 'Porto', '4000-002'),
-    (3, 'Avenida Central', 34, 'Braga', '4700-003'),
-    (4, 'Travessa da esquina', 2, 'Coimbra', '3000-004'),
+INSERT INTO Morada (rua, num_porta, cidade, codigo_postal) VALUES
+    ( 'Rua José Castilha', 78, 'Lisboa', '1000-001'),
+    ( 'Rua Santo Padre José', 2, 'Porto', '4000-002'),
+    ('Avenida Central', 34, 'Braga', '4700-003'),
+    ('Travessa da esquina', 2, 'Coimbra', '3000-004'),
     (5, 'Praça da alegria', 54, 'Faro', '8000-005'),
     (6, 'Rua da porta fechada', 26, 'Viseu', '3500-006'),
     (7, 'Avenida da Europa', 77, 'Évora', '7000-007'),
