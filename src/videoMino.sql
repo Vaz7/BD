@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Morada (
 -- Table Funcionário
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Funcionário (
-  idFuncionário INT NOT NULL,
+  idFuncionário INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(45) NOT NULL,
   data_nascimento DATE NOT NULL,
   iban VARCHAR(45) NOT NULL,
