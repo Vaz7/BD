@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Morada (
 -- Table Funcionário
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Funcionário (
-  idFuncionário INT NOT NULL,
+  idFuncionário INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(45) NOT NULL,
   data_nascimento DATE NOT NULL,
   iban VARCHAR(45) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
 -- Table Venda
 -- ----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Venda(
-  idVenda INT NOT NULL,
+  idVenda INT NOT NULL AUTO_INCREMENT,
   idCliente VARCHAR(20) NOT NULL,
   idFuncionário INT NOT NULL,
   n_artigos INT NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS Venda(
 -- Table Filme
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Filme (
-  idFilme INT NOT NULL,
+  idFilme INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
   data DATE NOT NULL,
   restricao_idade INT NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS Filme (
 -- Table Review
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Review(
-  idReview INT NOT NULL,
+  idReview INT NOT NULL AUTO_INCREMENT,
   rating INT NOT NULL,
   comentario TEXT(1000) NOT NULL,
   id_filme INT NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS Venda_filme(
 -- Table Fornecedor
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Fornecedor(
-  idFornecedor INT NOT NULL,
+  idFornecedor INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(45) NOT NULL,
   nif INT NOT NULL,
   iban VARCHAR(45) NOT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS Fornecedor(
 -- Table Compra
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Compra (
-  idCompra INT NOT NULL,
+  idCompra INT NOT NULL AUTO_INCREMENT,
   data DATE NOT NULL,
   n_artigos INT NOT NULL,
   preco_total DECIMAL(7,2) NOT NULL,
