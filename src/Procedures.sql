@@ -228,7 +228,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE ComprasFornecedores (IN data1 DATE, IN data2 DATE)
 BEGIN
-	SELECT c.idCompra, c.data_criacao, c.n_artigos, c.preco_total, f.idFuncionário, f.nome AS nome_funcionario
+	SELECT c.idCompra, c.data, c.n_artigos, c.preco_total, f.idFuncionário, f.nome AS nome_funcionario
 	FROM Compra c
 	INNER JOIN Funcionário f ON c.idFornecedor = f.idFuncionário
 	WHERE c.data_criacao BETWEEN data1 AND data2
