@@ -231,8 +231,8 @@ BEGIN
 	SELECT c.idCompra, c.data, c.n_artigos, c.preco_total, f.idFuncionário, f.nome AS nome_funcionario
 	FROM Compra c
 	INNER JOIN Funcionário f ON c.idFornecedor = f.idFuncionário
-	WHERE c.data_criacao BETWEEN data1 AND data2
-	ORDER BY c.data_criacao;
+	WHERE c.data BETWEEN data1 AND data2
+	ORDER BY c.data;
 END $$
 DELIMITER ;
 

@@ -11,6 +11,6 @@ CREATE INDEX idx_idFilme ON Filme (idFilme);
 -- Índice para consulta "TopFilmesAno" e "TopClientePeriodo"
 CREATE INDEX idx_data_venda ON Venda (data);
 -- Índice para consulta "ComprasFornecedores"
-CREATE INDEX idx_data_compra ON Compra (data_criacao);
+CREATE INDEX idx_data_compra ON Compra (data);
 -- Índice para consulta "VendasFuncionario"
 CREATE INDEX idx_idFuncionario ON Venda (idFuncionário);
