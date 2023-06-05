@@ -18,7 +18,7 @@ set "backupFile=%backupDir%\videomino_backup.sql"
 REM Create the backup using mysqldump
 cd C:\Program Files\MySQL\MySQL Server 8.0\bin
 echo Creating database backup...
-mysqldump --host=%host% --port=%port% --user=%username% --password=%password% %database% > %backupFile%
+mysqldump --host=%host% --port=%port% --routines --user=%username% --password=%password% %database% > %backupFile%
 echo Backup created successfully.
 
 endlocal
