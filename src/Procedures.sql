@@ -132,7 +132,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-DROP PROCEDURE VerificaFilmeStock;
+-- DROP PROCEDURE VerificaFilmeStock;
 
 -- CALL VerificaFilmeStock (1);
 

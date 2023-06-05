@@ -1,3 +1,5 @@
+USE videomino;
+
 INSERT INTO Morada (rua, num_porta, cidade, codigo_postal) VALUES
     ('Rua José Castilha', 78, 'Lisboa', '1000-001'),
     ('Rua Santo Padre José', 2, 'Porto', '4000-002'),
@@ -151,7 +153,6 @@ VALUES
 INSERT INTO Venda_filme (id_venda, id_Filme, quantidade)
 VALUES
   (1, 1, 1),
-  (2, 2, 1),
   (7, 3, 1),
   (3, 4, 1),
   (3, 5, 1),
@@ -195,7 +196,7 @@ INSERT INTO Compra (data, n_artigos, preco_total, idFornecedor)
 VALUES
   ('2023-05-10', 3, 29.97, 1),
   ('2023-06-03', 2, 19.98, 2),
-  ('2023-05-12', 1, 9.99, 3),
+  ('2023-05-10', 1, 9.99, 3),
   ('2023-05-13', 4, 39.96, 4),
   ('2023-05-14', 2, 19.98, 5),
   ('2023-05-15', 1, 9.99, 5),
@@ -221,7 +222,6 @@ VALUES
 INSERT INTO Compra_filme (id_compra, id_Filme, quantidade) VALUES
 (1, 1, 5),
 (1, 2, 5),
-(1, 3, 5),
 (2, 4, 6),
 (2, 5, 8),
 (3, 6, 7),
