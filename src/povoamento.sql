@@ -148,7 +148,7 @@ VALUES
     ('mariasantos', 1, 3, 20.44, false, true, '2023-05-09'), 
     ('antoniopereira', 1, 4, 31.98, true, false, '2023-05-10'), 
     ('andreAlmeida', 1, 5, 48.27, false, true, '2023-05-11'), 
-    ('catarinasantos', 2, 6, 53.96, false, true, '2023-06-03');
+    ('catarinasantos', 2, 6, 53.96, false, true, '2023-06-05');
 
 INSERT INTO Venda_filme (id_venda, id_Filme, quantidade)
 VALUES
@@ -194,7 +194,7 @@ VALUES
 
 INSERT INTO Compra (data, n_artigos, preco_total, idFornecedor)
 VALUES
-  ('2023-05-10', 3, 29.97, 1),
+  ('2023-06-05', 3, 29.97, 1),
   ('2023-06-03', 2, 19.98, 2),
   ('2023-05-10', 1, 9.99, 3),
   ('2023-05-13', 4, 39.96, 4),
@@ -220,7 +220,7 @@ VALUES
 
 
 INSERT INTO Compra_filme (id_compra, id_Filme, quantidade) VALUES
-(1, 1, 5),
+(1, 1, 50),
 (1, 2, 5),
 (2, 4, 6),
 (2, 5, 8),
