@@ -228,9 +228,9 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE ComprasFornecedores (IN data1 DATE, IN data2 DATE)
 BEGIN
-	SELECT c.idCompra, c.data, c.n_artigos, c.preco_total, f.idFuncionário, f.nome AS nome_funcionario
+	SELECT c.idCompra, c.data, c.n_artigos, c.preco_total, f.idFornecedor, f.nome
 	FROM Compra c
-	INNER JOIN Funcionário f ON c.idFornecedor = f.idFuncionário
+	INNER JOIN Fornecedor f ON c.idFornecedor = f.idFornecedor
 	WHERE c.data BETWEEN data1 AND data2
 	ORDER BY c.data;
 END $$
@@ -251,7 +251,6 @@ BEGIN
 	FROM Venda v
 	INNER JOIN Funcionário AS f ON f.idFuncionário = v.idFuncionário
 	WHERE v.data >= data1 AND v.data <= data2 AND f.idFuncionário = idf
-	-- GROUP BY f.idFuncionário, f.nome
 	ORDER BY v.data DESC;
 END $$
 DELIMITER ;
