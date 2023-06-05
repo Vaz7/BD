@@ -257,3 +257,20 @@ END $$
 DELIMITER ;
 
 -- CALL VendasFuncionario(1, '2022-01-01', CURDATE());
+
+
+
+-- User consultar as suas compras
+
+DELIMITER $$
+CREATE PROCEDURE ConsultaComprasUser (IN userID VARCHAR(20))
+BEGIN
+	SELECT *
+    FROM VendasView AS vv 
+    WHERE vv.`Username Cliente` = userID
+    ORDER BY vv.`Data de Venda` DESC;
+END $$
+DELIMITER ;
+
+-- DROP PROCEDURE ConsultaComprasUser;
+-- CALL ConsultaComprasUser('catarinasantos');
