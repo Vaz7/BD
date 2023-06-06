@@ -3,6 +3,7 @@ USE videomino;
 
 -- ADMINISTRADOR
 -- DROP USER 'admin'@'localhost';
+
 DROP USER IF EXISTS 'admin'@'localhost';
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
 GRANT ALL PRIVILEGES ON videomino.* TO 'admin'@'localhost';

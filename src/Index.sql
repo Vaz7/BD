@@ -14,3 +14,8 @@ CREATE INDEX idx_data_venda ON Venda (data);
 CREATE INDEX idx_data_compra ON Compra (data);
 -- Índice para consulta "VendasFuncionario"
 CREATE INDEX idx_idFuncionario ON Venda (idFuncionário);
+
+
+
+
+

@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS Venda(
 
 
   
--- SELECT * FROM Venda INNER JOIN Venda_filme vf ON vf.id_venda = Venda.idVenda WHERE vf.id_venda = 17;
+-- SELECT * FROM Venda; INNER JOIN Venda_filme vf ON vf.id_venda = Venda.idVenda WHERE vf.id_venda = 17;
 
 -- -----------------------------------------------------
 -- Table Filme
